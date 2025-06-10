@@ -1,3 +1,13 @@
+DATABASE_URL=""
+CLOUDINARY_URL=
+JWT_SECRET_SEED=
+NEXTAUTH_SECRET=
+SITE_URL=
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+NEXTAUTH_URL=
+
+
 # Next.js & HeroUI Template
 
 This is a template for creating applications using Next.js 14 (app directory) and HeroUI (v2).
