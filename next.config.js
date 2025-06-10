@@ -9,6 +9,19 @@ const nextConfig = {
                 port: '',
                 pathname: '/**',
             },
+             {
+                protocol: 'https',
+                hostname: 'marcomediacion.es',
+                port: '',
+                pathname: '/**',
+            },
+ {
+                protocol: 'https',
+                hostname: 'res.cloudinary.com',
+                port: '',
+                pathname: '/**',
+            },
+           
         ]
       },
 };

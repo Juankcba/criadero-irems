@@ -9,6 +9,7 @@ import { Card, CardBody, CardHeader } from "@heroui/react";
 import Swal from "sweetalert2";
 import { IBlog } from "../interfaces/blog-data";
 import { useEffect, useMemo } from "react";
+import InputImage from "./InputImage";
 interface props {
     blog: IBlog | null,
     setBlog: any
@@ -82,15 +83,9 @@ useMemo(() => {
              value={formik.values.content} 
              onChange={formik.handleChange}
                 />
-                <Input 
-             isRequired
-             placeholder="Ingrese una url de imagen"
-             name='image' 
-             id='image' 
-             label='Image' 
-             value={formik.values.image} 
-             onChange={formik.handleChange}
-                />
+                <div className="flex justify-between gap-4 items-center">
+                 <InputImage values={formik.values.image} onChange={(e:string) => formik.setFieldValue('image',e)} />
+                </div>
 
                 <Button type="submit">Guardar</Button>
         </form>

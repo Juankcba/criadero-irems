@@ -6,11 +6,12 @@ import Swal from "sweetalert2";
 import { deleteBlog } from "../actions/blog-action";
 import FormNewBlog from "./FormNewBlog";
 import { useState } from "react";
+import { useSession } from "next-auth/react";
 interface props {
     blogs: IBlog[]
 }
 const TableBlogs = ({blogs}:props) => {
-    
+    const { data: session } = useSession();
     const [blog, setBlog] = useState<IBlog | null>(null);
     const handleDelete = async (id:string) => {
         try {
@@ -28,6 +29,9 @@ const TableBlogs = ({blogs}:props) => {
     console.log(blog)
     return (
         <section className="flex flex-col  gap-2 w-full">
+          <div>
+            <p>Nombre: {session?.user?.name}</p>
+          </div>
             <div>
             <Button className="mr-auto" color="primary" onPress={()=> setBlog(null)}>Nueva entrada</Button>
             </div>

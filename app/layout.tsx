@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import { Link } from "@heroui/link";
 import clsx from "clsx";
-
+import { SessionProvider } from "next-auth/react";
 import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
@@ -41,6 +41,7 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
+      <SessionProvider>
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex flex-col h-screen">
             <Navbar />
@@ -60,6 +61,7 @@ export default function RootLayout({
             </footer>
           </div>
         </Providers>
+        </SessionProvider>
       </body>
     </html>
   );
